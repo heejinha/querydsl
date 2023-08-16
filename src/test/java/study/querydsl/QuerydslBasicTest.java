@@ -1,7 +1,7 @@
 package study.querydsl;
 
+import static com.querydsl.jpa.JPAExpressions.select;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.times;
 import static study.querydsl.entity.QMember.member;
 import static study.querydsl.entity.QTeam.team;
 
@@ -20,6 +20,7 @@ import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.PersistenceUnit;
 import study.querydsl.entity.Member;
+import study.querydsl.entity.QMember;
 import study.querydsl.entity.Team;
 
 @SpringBootTest
@@ -279,6 +280,20 @@ public class QuerydslBasicTest {
 
 		boolean loaded = emf.getPersistenceUnitUtil().isLoaded(fetchMember.getTeam());
 		assertThat(loaded).isTrue();
+	}
+
+	@Test
+	public void subQuery() {
+		QMember memberSub = new QMember("memberSub");
+		List<Member> result = queryFactory
+								.selectFrom(member)
+								.where(member.age.eq(
+											select(memberSub.age.max())
+											.from(memberSub)
+										))
+								.fetch();
+		assertThat(result).extracting("age")
+			.containsExactly(40);
 	}
                     
 
