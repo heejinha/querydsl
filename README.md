@@ -25,10 +25,10 @@ inflean | 실전! Querydsl 수강 기록
     - [x] Case 문
     - [x] 상수, 문자 더하기
 - [ ] 섹션 4. 중급 문법
-    - [ ] 프로젝션과 결과 반환 - 기본
-    - [ ] 프로젝션과 결과 반환 - DTO 조회
-    - [ ] 프로젝션과 결과 반환 - @QueryProtection
-    - [ ] 동적 쿼리 - BooleanBuilder 사용
+    - [x] 프로젝션과 결과 반환 - 기본
+    - [x] 프로젝션과 결과 반환 - DTO 조회
+    - [x] 프로젝션과 결과 반환 - @QueryProtection
+    - [x] 동적 쿼리 - BooleanBuilder 사용
     - [ ] 동적 쿼리 - Where 다중 파라미터 사용
     - [ ] 수정, 삭제 벌크 연산
     - [ ] SQL function 호출하기
