@@ -10,11 +10,15 @@ import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Commit;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.jayway.jsonpath.Predicate;
 import com.querydsl.core.BooleanBuilder;
 import com.querydsl.core.Tuple;
+import com.querydsl.core.types.Expression;
 import com.querydsl.core.types.Projections;
+import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 
 import jakarta.persistence.EntityManager;
@@ -417,4 +421,51 @@ public class QuerydslBasicTest {
 			.where(builder)
 			.fetch();
 	}
+
+
+	@Test
+	public void dynamicQuery_Predicate() {
+		String usernameParam = "m1";
+		Integer ageParam = null;
+		
+		List<Member> result = searchMember2(usernameParam,ageParam);
+		assertThat(result.size()).isEqualTo(1);
+	}
+
+	private List<Member> searchMember2(String usernameCond, Integer ageCond) {
+		return queryFactory
+					.selectFrom(member)
+					.where(usernameEq(usernameCond),ageEg(ageCond))
+					.fetch();
+	}
+
+	private BooleanExpression usernameEq(String usernameCond) {
+		return (usernameCond == null)
+					? null : member.username.eq(usernameCond);
+	}
+
+	private BooleanExpression ageEg(Integer ageCond) {
+		return (ageCond == null)
+					? null : member.age.eq(ageCond);                     
+	}
+
+	@Test
+	public void bulkUpdate() {
+		long count = queryFactory
+			.update(member)
+			.set(member.username, "비회원")
+			.where(member.age.lt(28))
+			.execute();
+		System.out.println("===================================");
+		System.out.println("======>" + count);
+
+		em.flush();
+		em.clear();
+
+		List<Member> result = queryFactory.selectFrom(member).fetch();
+		for (Member member2 : result) {
+			System.out.println("======>" + member2);
+		}
+	}
+
 }
