@@ -24,14 +24,14 @@ inflean | 실전! Querydsl 수강 기록
     - [x] 서브 쿼리
     - [x] Case 문
     - [x] 상수, 문자 더하기
-- [ ] 섹션 4. 중급 문법
+- [x] 섹션 4. 중급 문법
     - [x] 프로젝션과 결과 반환 - 기본
     - [x] 프로젝션과 결과 반환 - DTO 조회
     - [x] 프로젝션과 결과 반환 - @QueryProtection
     - [x] 동적 쿼리 - BooleanBuilder 사용
-    - [ ] 동적 쿼리 - Where 다중 파라미터 사용
-    - [ ] 수정, 삭제 벌크 연산
-    - [ ] SQL function 호출하기
+    - [x] 동적 쿼리 - Where 다중 파라미터 사용
+    - [x] 수정, 삭제 벌크 연산
+    - [x] SQL function 호출하기
 - [ ] 섹션 5. 실무 활용 - 순수 JPA와 Querydsl
 - [ ] 섹션 6. 실무 활용 - 스프링 데이터 JPA와 Querydsl
 - [ ] 섹션 7. 스프링 데이터 JPA가 제공하는 Querydsl 기능
