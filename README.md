@@ -32,10 +32,10 @@ inflean | 실전! Querydsl 수강 기록
     - [x] 동적 쿼리 - Where 다중 파라미터 사용
     - [x] 수정, 삭제 벌크 연산
     - [x] SQL function 호출하기
-- [ ] 섹션 5. 실무 활용 - 순수 JPA와 Querydsl
+- [x] 섹션 5. 실무 활용 - 순수 JPA와 Querydsl
     - [x] 순수 JPA 리포지토리와 Querydsl
-    - [ ] 동적 쿼리와 성능 최적화 조회 - Builder 사용
-    - [ ] 동적 쿼리와 성능 최적화 조회 - Where절 파라미터 사용
-    - [ ] 조회 API 컨트롤러 개발
+    - [x] 동적 쿼리와 성능 최적화 조회 - Builder 사용
+    - [x] 동적 쿼리와 성능 최적화 조회 - Where절 파라미터 사용
+    - [x] 조회 API 컨트롤러 개발
 - [ ] 섹션 6. 실무 활용 - 스프링 데이터 JPA와 Querydsl
 - [ ] 섹션 7. 스프링 데이터 JPA가 제공하는 Querydsl 기능
