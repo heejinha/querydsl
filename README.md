@@ -38,4 +38,13 @@ inflean | 실전! Querydsl 수강 기록
     - [x] 동적 쿼리와 성능 최적화 조회 - Where절 파라미터 사용
     - [x] 조회 API 컨트롤러 개발
 - [ ] 섹션 6. 실무 활용 - 스프링 데이터 JPA와 Querydsl
+    - [x] 스프링 데이터 JPA 리포지토리로 변경
+    - [x] 사용자 정의 리포지토리
+    - [ ] 스프링 데이터 페이징 활용1 - Querydsl 페이징 연동
+    - [ ] 스프링 데이터 페이징 활용2 - CountQuery 최적화
+    - [ ] 스프링 데이터 페이징 활용3 - 컨트롤러 개발
 - [ ] 섹션 7. 스프링 데이터 JPA가 제공하는 Querydsl 기능
+    - [ ] 인터페이스 지원 - QuerydslPredicateExecutor
+    - [ ] Querydsl Web 지원
+    - [ ] 리포지토리 지원 - QuerydslRepositorySupport
+    - [ ] Querydsl 지원 클래스 직접 만들기
