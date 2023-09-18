@@ -44,7 +44,7 @@ inflean | 실전! Querydsl 수강 기록
     - [x] 스프링 데이터 페이징 활용2 - CountQuery 최적화
     - [x] 스프링 데이터 페이징 활용3 - 컨트롤러 개발
 - [ ] 섹션 7. 스프링 데이터 JPA가 제공하는 Querydsl 기능
-    - [ ] 인터페이스 지원 - QuerydslPredicateExecutor
-    - [ ] Querydsl Web 지원
-    - [ ] 리포지토리 지원 - QuerydslRepositorySupport
+    - [x] 인터페이스 지원 - QuerydslPredicateExecutor
+    - [x] Querydsl Web 지원
+    - [x] 리포지토리 지원 - QuerydslRepositorySupport
     - [ ] Querydsl 지원 클래스 직접 만들기
