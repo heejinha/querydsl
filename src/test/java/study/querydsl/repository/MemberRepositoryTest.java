@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import study.querydsl.dto.MemberSearchCondition;
 import study.querydsl.dto.MemberTeamDto;
 import study.querydsl.entity.Member;
+import study.querydsl.entity.QMember;
 import study.querydsl.entity.Team;
 
 import java.util.List;
@@ -85,6 +86,19 @@ class MemberRepositoryTest {
 
 		Page<MemberTeamDto> result = memberRepository.searchPageSimple(condition, pageRequest);
 		Assertions.assertThat(result.getSize()).isEqualTo(3);
+	}
+
+	@Test
+	void querydslPredicateExecutorTest() {
+		QMember member = QMember.member;
+		Iterable<Member> members = memberRepository.findAll(
+			member.age.between(20, 40)
+				.and(member.username.eq("member3"))
+		);
+
+		for (Member m: members) {
+			System.out.println("======== " + m);
+		}
 	}
 
 }
